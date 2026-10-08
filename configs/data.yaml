@@ -1,0 +1,12 @@
+# DRAFT - values are starting points to be validated in EDA / validation experiments.
+dataset:
+  subset: FD001            # FD002 added as one extra benchmark after FD001 is done (DECISIONS D-002)
+  raw_dir: data/raw
+target:
+  rul_cap: 125             # treated as a tuned setting: compare 100 / 125 / 150 on validation
+stages:
+  n_classes: 3
+  thresholds: null         # FIXED during EDA with a written justification, before any model runs
+split:
+  val_fraction: 0.2        # fraction of ENGINES held out (never split by row)
+  seed: 42

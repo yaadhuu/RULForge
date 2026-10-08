@@ -1,0 +1,15 @@
+# DRAFT - starting point taken from the old Attention-LSTM notebook
+model: attention_lstm           # lstm | attention_lstm
+hidden_size: 128
+num_layers: 2
+dropout: 0.2
+heads:
+  rul_loss: huber
+  stage_loss: cross_entropy     # class-weighted
+  stage_loss_weight: 0.5        # ablate: 0 (RUL only) vs 0.5 (multi-task)
+optimizer: {name: adam, lr: 0.0003}
+grad_clip: 0.5
+batch_size: 64
+epochs: 60
+early_stopping_patience: 8      # on VALIDATION loss
+seeds: [0, 1, 2, 3, 4]          # ALL seeds reported; seed ensemble also gives uncertainty

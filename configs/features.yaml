@@ -1,0 +1,9 @@
+# DRAFT
+drop_constant_sensors: true     # detected from training engines (FD001: s1, s5, s10, s16, s18, s19, op_setting_3)
+rolling:
+  sensors: [s11, s12, s4, s7, s6]   # top RUL correlates from the old EDA; re-check
+  window: 5
+  stats: [mean, std]
+lag_delta: true                  # lag1 + delta features
+use_cycle_as_feature: false      # ablate separately
+sequence_length: 30              # ablate: 20 / 30 / 50
